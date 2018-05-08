@@ -3,6 +3,11 @@ import Calendar from 'react-calendar';
 
 class App extends Component {
 
+  getDayName(number) {
+    let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+    return days[number];
+  };
+
   getMonthName(number) {
     let months = [
       { date: new Date('January 2018') },
@@ -18,24 +23,27 @@ class App extends Component {
 
   render() {
 
+  let today = new Date().getDay();
+  console.log("today: ", today);
   let currentMonth = new Date().getMonth();
 
-  if (currentMonth ===  4){
-    return <div><h1>Current Month</h1>
-                <Calendar
-                  value={this.getMonthName(currentMonth)}
-                />
-    </div>;
-  } else {
-      return <div><h1>Not The Current Month</h1>
-                  <Calendar
-                    value={this.getMonthName(currentMonth)}
-                  />
-      </div>;
-    }
+  if (today === 6 || today === 0){
+    return <div>
+            <p>Today is {this.getDayName(today)} - You can watch TV all day today</p>
+            <h1>Current Month</h1>
+            <Calendar
+              value={this.getMonthName(currentMonth)}
+            />
+           </div>;
+  } else { return <div>
+                    <p>Today is {this.getDayName(today)} - You can watch TV all day today</p>
+                    <h1>Current Month</h1>
+                    <Calendar
+                      value={this.getMonthName(currentMonth)}
+                    />
+                    </div>;;
+    };
   }
-
-
 }
 
 export default App;
