@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Calendar from 'react-calendar';
 
-class App extends Component {
+class DayChecker extends Component {
 
   getDayName(number) {
     let days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
@@ -24,7 +24,6 @@ class App extends Component {
   render() {
 
   let today = new Date().getDay();
-  console.log("today: ", today);
   let currentMonth = new Date().getMonth();
 
   if (today === 6 || today === 0){
@@ -46,4 +45,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default DayChecker;
