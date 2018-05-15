@@ -3,6 +3,7 @@ import DayChecker from './DayChecker';
 import Header from './Header';
 import MonthChecker from './MonthChecker';
 import WeekChecker from './WeekChecker';
+import MealPlan from './MealPlan';
 
 class App extends Component {
   render() {
@@ -10,7 +11,8 @@ class App extends Component {
       <Header />,
       <DayChecker />,
       <MonthChecker />,
-      <WeekChecker />
+      <WeekChecker />,
+      <MealPlan />,
     ];
   }
 }

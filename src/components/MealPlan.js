@@ -4,19 +4,21 @@ import _ from 'lodash';
 class MealPlan extends Component {
   state = {
     meal: '',
-    meals: []
+    meals: [],
+    description: '',
+    descriptions: []
   };
 
-  renderMeals() {
+    renderMeals() {
     return _.map(this.state.meals, meal => <li>{meal}</li>);
-  }
+  };
 
   render() {
     return (
       <div>
         <h2>Today you should eat this</h2>
-        <input onChange={e => this.setState({meal: e.target.value})} value={this.state.meal} type="text" />
-        // <button>Add meal</button>
+        <p>Name of meal:</p><input onChange={e => this.setState({meal: e.target.value})} value={this.state.meal} type="text" />
+        <p>Description of meal:</p><input onChange={e => this.setState({description: e.target.value})} value={this.state.description} type="text" />
         <button
           onClick={() => this.setState({meals: [...this.state.meals, this.state.meal]})}>
           Add meal</button>
