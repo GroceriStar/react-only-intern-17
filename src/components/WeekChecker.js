@@ -6,7 +6,7 @@ class WeekChecker extends Component {
 
   render (){
 
-    let date = new Date;
+    let date = new Date();
     let days = ['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
     let prefixes = ['First', 'Second', 'Third', 'Fourth', 'Fifth'];
 

@@ -14,7 +14,8 @@ class DayChecker extends Component {
   if (today === 6 || today === 0){
     return <div><p>Today is {this.getDayName(today)} - You can watch TV all day today</p></div>;
   } else { return <div><p>Today is {this.getDayName(today)} - You can watch TV all day today</p></div>;
-    };
+    }
+
   }
 }
 
